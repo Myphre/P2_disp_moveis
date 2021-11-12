@@ -1,11 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { useSelector } from 'react-redux'
 
-const ListaDeLugaresTela = () => {
+const ListaDeLugaresTela = (props) => {
+    const lugares = useSelector(estado => estado.lugares.lugares)
     return (
-        <View>
-            <Text>Lista de Lugares</Text>
-        </View>
+        <FlatList 
+            data={lugares}
+            keyExtractor={lugar => lugar.id}
+            renderItem={lugar => <Text>{JSON.stringify(lugar)}</Text>}
+        />
     )
 }
 
