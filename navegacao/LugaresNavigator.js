@@ -20,7 +20,13 @@ const container = (
                 headerStyle:{backgroundColor: Cores.primary},
                 headerTintColor: 'white'
             }}>
-            <Stack.Screen name="DetalhesDoLugar" component={DetalhesDoLugarTela}/>
+            <Stack.Screen 
+                name="DetalhesDoLugar" 
+                component={DetalhesDoLugarTela}
+                options={(props) => ({
+                    headerTitle: props.route.tituloLugar
+                })}
+                />
             <Stack.Screen 
                 name="ListaDeLugares" 
                 component={ListaDeLugaresTela}
