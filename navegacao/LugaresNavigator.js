@@ -5,16 +5,16 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import BotaoCabecalho from '../componentes/BotaoCabecalho'
 import Cores from '../constantes/Cores'
 import DetalhesDoLugarTela from '../telas/DetalhesDoLugarTela'
-import ListaDeLugaresTela from '../telas/ListaDeLugaresTela'
+import ListaDeContatosTela from '../telas/ListaDeContatosTela'
 import MapaTela from '../telas/MapaTela'
-import NovoLugarTela from '../telas/NovoLugarTela'
+import NovoContatoTela from '../telas/NovoContatoTela'
 
 const Stack = createNativeStackNavigator()
 
 const container = (
     <NavigationContainer>
         <Stack.Navigator
-            initialRouteName="ListaDeLugares"
+            initialRouteName="Lista de Contatos"
             //initialRouteName="NovoLugar"
             screenOptions={{
                 headerStyle:{backgroundColor: Cores.primary},
@@ -24,12 +24,12 @@ const container = (
                 name="DetalhesDoLugar" 
                 component={DetalhesDoLugarTela}
                 options={(props) => ({
-                    headerTitle: props.route.tituloLugar
+                    headerTitle: props.route.nome
                 })}
                 />
             <Stack.Screen 
-                name="ListaDeLugares" 
-                component={ListaDeLugaresTela}
+                name="Lista de Contatos" 
+                component={ListaDeContatosTela}
                 options={(props) => ({
                     headerRight: () => (
                         <HeaderButtons
@@ -38,7 +38,7 @@ const container = (
                                title="Adicionar"
                                iconName="md-add"
                                onPress={() => {
-                                    props.navigation.navigate('NovoLugar')
+                                    props.navigation.navigate('Novo Contato')
                                }} 
                             />
                         </HeaderButtons>
@@ -46,7 +46,7 @@ const container = (
                 })}
             />
             <Stack.Screen name="Mapa" component={MapaTela}/>
-            <Stack.Screen name="NovoLugar" component={NovoLugarTela} />
+            <Stack.Screen name="Novo Contato" component={NovoContatoTela} />
         </Stack.Navigator>   
     </NavigationContainer>
 )

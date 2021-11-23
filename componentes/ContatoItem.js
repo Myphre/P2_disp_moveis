@@ -8,22 +8,22 @@ import {
 } from 'react-native'
 import Cores from '../constantes/Cores'
 
-const LugarItem = (props) => {
+const ContatoItem = (props) => {
     return (
         <TouchableOpacity
             onPress={props.onSelect}
-            style={styles.lugarItem}>
+            style={styles.contatoItem}>
 
-            <Image 
+        {/*}    <Image 
                 style={styles.imagem}
                 source={{uri: props.imagem}}
-            />
+    /> */}
             <View
                 style={styles.infoContainer}>
                 <Text
-                    style={styles.nomeLugar}>{props.nomeLugar}</Text>
+                    style={styles.nomeLugar}>{props.nomeContato}</Text>
                 <Text
-                    style={styles.endereco}>{props.endereco}</Text>
+                    style={styles.endereco}>{props.numeroContato}</Text>
             </View>
 
         </TouchableOpacity>
@@ -31,7 +31,7 @@ const LugarItem = (props) => {
 }
 
 const styles = StyleSheet.create({
-    lugarItem: {
+    contatoItem: {
         borderBottomColor: '#CCC',
         borderBottomWidth: 1,
         paddingVertical: 15,
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LugarItem
+export default ContatoItem

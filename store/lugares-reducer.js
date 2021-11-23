@@ -1,16 +1,19 @@
-import Lugar from "../modelo/Lugar";
-import { ADD_LUGAR } from "./lugares-actions"
+import Contato from "../modelo/Contato";
+import { ADD_CONTATO } from "./contato-actions"
 
 const estadoInicial = {
-    lugares: []
+    contatos: []
 }
+
+
 
 export default (estado = estadoInicial, action) => {
     switch (action.type){
-        case ADD_LUGAR:
-            const lugar = new Lugar (new Date().toString(), action.dadosLugar.nomeLugar, action.dadosLugar.imagem)
+        case ADD_CONTATO:
+            const contato = new Contato (new Date().toString(), action.dadosContato.nomeContato, action.dadosContato.nroContato)
+            console.log(contato + ' nome : ' +  contato.nome + '  numero  ' +contato.numero);
             return {
-                lugares: [lugar, ...estado.lugares]
+                contatos: [contato, ...estado.contatos]
             }
         default:
             return estado
