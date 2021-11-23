@@ -4,7 +4,6 @@ import React from 'react'
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import BotaoCabecalho from '../componentes/BotaoCabecalho'
 import Cores from '../constantes/Cores'
-import DetalhesDoLugarTela from '../telas/DetalhesDoLugarTela'
 import ListaDeContatosTela from '../telas/ListaDeContatosTela'
 import MapaTela from '../telas/MapaTela'
 import NovoContatoTela from '../telas/NovoContatoTela'
@@ -20,13 +19,6 @@ const container = (
                 headerStyle:{backgroundColor: Cores.primary},
                 headerTintColor: 'white'
             }}>
-            <Stack.Screen 
-                name="DetalhesDoLugar" 
-                component={DetalhesDoLugarTela}
-                options={(props) => ({
-                    headerTitle: props.route.nome
-                })}
-                />
             <Stack.Screen 
                 name="Lista de Contatos" 
                 component={ListaDeContatosTela}

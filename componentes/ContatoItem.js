@@ -10,7 +10,7 @@ import Cores from '../constantes/Cores'
 
 const ContatoItem = (props) => {
     return (
-        <TouchableOpacity
+        <View
             onPress={props.onSelect}
             style={styles.contatoItem}>
 
@@ -26,7 +26,7 @@ const ContatoItem = (props) => {
                     style={styles.endereco}>{props.numeroContato}</Text>
             </View>
 
-        </TouchableOpacity>
+        </View>
     )
 }
 
